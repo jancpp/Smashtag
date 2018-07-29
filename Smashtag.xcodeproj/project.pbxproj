@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D376ABE210CCEBC00304D58 /* SmashTweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D376ABD210CCEBC00304D58 /* SmashTweetTableViewController.swift */; };
 		EA2269DA1E7AD4AC008B27A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2269D91E7AD4AC008B27A8 /* AppDelegate.swift */; };
 		EA2269DF1E7AD4AC008B27A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2269DD1E7AD4AC008B27A8 /* Main.storyboard */; };
 		EA2269E11E7AD4AC008B27A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2269E01E7AD4AC008B27A8 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D376ABD210CCEBC00304D58 /* SmashTweetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmashTweetTableViewController.swift; sourceTree = "<group>"; };
 		EA2269D61E7AD4AC008B27A8 /* Smashtag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smashtag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2269D91E7AD4AC008B27A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA2269DE1E7AD4AC008B27A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				EAF76ED21E85B551004439A6 /* TwitterUser.swift */,
 				EA2269DD1E7AD4AC008B27A8 /* Main.storyboard */,
 				EA2269EC1E7AD4FA008B27A8 /* TweetTableViewController.swift */,
+				3D376ABD210CCEBC00304D58 /* SmashTweetTableViewController.swift */,
 				EA2269F21E7B035A008B27A8 /* TweetTableViewCell.swift */,
 				EA2269E51E7AD4AC008B27A8 /* Info.plist */,
 				EA2269EB1E7AD4BA008B27A8 /* Supporting Files */,
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D376ABE210CCEBC00304D58 /* SmashTweetTableViewController.swift in Sources */,
 				EA2269DA1E7AD4AC008B27A8 /* AppDelegate.swift in Sources */,
 				EAF76ED11E85984A004439A6 /* Tweet.swift in Sources */,
 				EAF76ED31E85B551004439A6 /* TwitterUser.swift in Sources */,

@@ -29,6 +29,12 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    func insetTweets(_ newTweets: [Twitter.Tweet]) {
+        self.tweets.insert(newTweets, at: 0)
+        self.tableView.insertSections([0], with: .fade)
+        
+    }
+    
     private func twitterRequest() -> Twitter.Request? {
         if let query = searchText, !query.isEmpty {
             return Twitter.Request(search: "\(query) -filter:safe -filter:retweets", count: 100)
@@ -41,11 +47,10 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     private func searchForTweets() {
         if let request = lastTwitterRequest?.newer ?? twitterRequest() {
             lastTwitterRequest = request
-            request.fetchTweets { [weak self] (newTweets) in
-                DispatchQueue.main.async {
+            request.fetchTweets { [weak self] (newTweets) in // this is off the main queue
+                DispatchQueue.main.async { // so we must dispatch back to main queue
                     if request == self?.lastTwitterRequest {
-                        self?.tweets.insert(newTweets, at: 0)
-                        self?.tableView.insertSections([0], with: .fade)
+                        self?.insetTweets(newTweets)
                     }
                     self?.refreshControl?.endRefreshing()
                 }
@@ -94,7 +99,14 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
         
-        let tweet = tweets[indexPath.section][indexPath.row]
+        // get the tweet that is associated with this row
+        // that the table view is asking us to provide a UITableViewCell for
+        let tweet: Twitter.Tweet = tweets[indexPath.section][indexPath.row]
+        
+        // Configure the cell
+        
+        // outlets to custom UI are connected to this sub-classed cell
+        // so we need to tell it which tweet is shown in its row
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
